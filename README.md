@@ -37,3 +37,9 @@ $ ./db-control insert
 ```
 $ ./db-control delete [name]
 ```
+
+### display all the document
+```
+$ ./db-control display
+```
+
