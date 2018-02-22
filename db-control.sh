@@ -4,7 +4,7 @@
 
 # tool part
 Usage() {
-    echo "Usage: $0 { deploy | insert | delete [NAME] }"
+    echo "Usage: $0 { deploy | insert | delete [NAME] | display }"
     exit 1
 }
 
@@ -40,6 +40,9 @@ Delete() {
     ./delete.py $name 
 }
 
+Display() {
+    ./display.py
+}
 
 case "$1" in
     deploy)
@@ -54,6 +57,11 @@ case "$1" in
     delete)
         Parameter_judge 2 $#
         Delete $2
+        ;;
+
+    display)
+        Parameter_judge 1 $#
+        Display
         ;;
 
     *)
