@@ -29,6 +29,11 @@ $ ./deploy.sh restart
 
 ### Insert document to mongoDB
 ```
-$ ./insert.sh 
+$ ./db-control insert
 ```
 
+
+### delete document in mongoDB
+```
+$ ./db-control delete [name]
+```
