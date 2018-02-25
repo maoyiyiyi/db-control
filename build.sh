@@ -31,7 +31,13 @@ Build_code() {
 
     mkdir $code_build
 
-    file_list=( delete.py display.py insert.py mongo-control.sh preparation.sh README.md tamplate.json db-control.sh )
+    file_list=( README.md \
+                delete.py \
+                display.py \
+                insert.py \
+                tamplate.json \
+                mongo-control.sh \
+                db-control.sh )
     
     for file in ${file_list[@]}
     do 
@@ -41,34 +47,8 @@ Build_code() {
     Zip_dir "$code_build.zip" "$code_build"
 }
 
-Build_deploy() {
-    version="$1"
-    deploy_build="deploy-$version"
+# run part
+version="$1"
 
-    mkdir $deploy_build
-
-    file_list=( deploy.sh )
-
-    for file in ${file_list[@]}
-    do 
-        cp $file $deploy_build
-    done
-
-    Zip_dir "$deploy_build.zip" "$deploy_build"
-}
-
-case "$1" in 
-    code)
-        Parameter_judge 2 $#
-        Build_code $2
-        ;;
-
-    deploy)
-        Parameter_judge 2 $#
-        Build_deploy $2
-        ;;
-
-    *)
-        Usage
-        ;;
-esac
+Parameter_judge 1 $#
+Build_code $1
