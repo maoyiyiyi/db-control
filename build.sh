@@ -2,7 +2,7 @@
 
 # tool part
 Usage() {
-    echo "Usage: $0 "
+    echo "Usage: $0 [version]"
     exit 1
 }
 
