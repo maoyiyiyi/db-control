@@ -41,12 +41,12 @@ Uninstall() {
 case "$1" in 
 	start)
 	Parameter_judge 1 $#
-	Install start
+	Install 
 	;;
 
 	stop)
 	Parameter_judge 1 $#
-	Uninstall stop
+	Uninstall 
 	;;
 
 	restart)
