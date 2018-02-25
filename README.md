@@ -1,37 +1,17 @@
-# resume-library
+# db-control
+
 
 # Usage
-### Preparation
+----
+### mongo control
 ```
-$ sudo ./preparation.sh
-```
-
-### MongoDB
-1. install mongoDB
-```
-$ ./deploy.sh start
-```
-
-2. uninstall mongoDB
-```
-$ ./deploy.sh stop
-```
-
-3. get mongoDB status
-```
-$ ./deploy.sh status
-```
-
-4. restart mongoDB
-```
-$ ./deploy.sh restart
-```
+$ ./mongo-control { start | stop | restart | status }
+``` 
 
 ### Insert document to mongoDB
 ```
 $ ./db-control insert
 ```
-
 
 ### delete document in mongoDB
 ```
@@ -42,4 +22,7 @@ $ ./db-control delete [name]
 ```
 $ ./db-control display
 ```
+
+
+
 
