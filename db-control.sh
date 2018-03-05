@@ -44,6 +44,20 @@ Display() {
     ./display.py
 }
 
+Encrypt(){
+    name="$1"
+    shc -v -f $name.sh
+    rm -r $name.sh.x.c
+
+    if [ ! -d './encrypt_doc/' ];then
+        mkdir encrypt_doc
+    fi
+    mv ~/db-control/$name.sh.x ~/db-control/encrypt_doc
+    cd encrypt_doc
+    mv $name.sh.x $name.sh
+
+}
+
 case "$1" in
     deploy)
         echo "deploy"
@@ -62,6 +76,10 @@ case "$1" in
     display)
         Parameter_judge 1 $#
         Display
+        ;;
+    encrypt)
+        Parameter_judge 2 $#
+        Encrypt $2
         ;;
 
     *)
